@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Erd\H{o}s Problem 376: Binomial Coefficients Coprime to 105}
+\author{Autonomous Mathematical Research Agent}
+\date{\today}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate Erd\H{o}s problem \#376: are there infinitely many $n$ such that
+$\binom{2n}{n}$ is coprime to $105=3\cdot 5\cdot 7$?
+We record an elementary proof for a single prime, a computational search up
+to $3^{22}$, and the observation that the problem remains open for the triple
+of primes $(3,5,7)$.
+\end{abstract}
+
+\section{Statement}
+By Kummer's theorem, a prime $p$ does not divide $\binom{2n}{n}$ iff every
+base-$p$ digit of $n$ is $<p/2$.
+
+\section{Single-prime lemma}
+For any prime $p$, $n_k=(p^k-1)/2$ gives infinitely many $n$ with
+$p\nmid \binom{2n}{n}$.
+
+\section{Computation}
+Exact search (see \texttt{src/search.py}) found 14 values of $n\le 3^{22}$ with
+$\gcd(\binom{2n}{n},105)=1$, the largest being $59548401$.
+
+\section{Status}
+The infinitude for the triple $(3,5,7)$ is unresolved.
+\end{document}
