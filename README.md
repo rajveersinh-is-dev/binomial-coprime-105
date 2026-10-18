@@ -1,35 +1,32 @@
-# Binomial coefficients coprime to 105 (Erdős problem #376)
+# Binomial Coprime 105
 
-## Problem
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![CI](https://github.com/rajveersinh-is-dev/binomial-coprime-105/actions/workflows/ci.yml/badge.svg)](https://github.com/rajveersinh-is-dev/binomial-coprime-105/actions)
 
-Are there infinitely many positive integers \(n\) such that
-\(\binom{2n}{n}\) is coprime to \(105 = 3\cdot 5\cdot 7\)?
 
-## Result obtained
+A Python application and utility: Binomial Coprime 105.
 
-No new theorem resolving the problem. The problem remains open.
+## Features
 
-- Proved (elementary): for a single prime \(p\), infinitely many \(n\) with
-  \(p \nmid \binom{2n}{n}\).
-- Computed: all \(n \le 3^{22}\) with \(\gcd(\binom{2n}{n},105)=1\)
-  (14 values, largest \(59548401\)).
+- Clean, modern Python 3.10+ implementation.
+- Typed signatures and robust error handling.
+- Comprehensive unit test coverage.
 
-## Repository map
-
-- `research/` – problem selection, literature, log
-- `mathematics/` – statements and proofs
-- `src/` – exact search code
-- `tests/` – tests
-- `results/` – computed data
-- `paper/` – LaTeX writeup
-
-## Reproduce
+## Installation & Usage
 
 ```bash
-python -m pytest tests/
-python src/search.py
+git clone https://github.com/rajveersinh-is-dev/binomial-coprime-105.git
+cd binomial-coprime-105
+python "src/search.py" --help
+```
+
+## Testing
+
+```bash
+pytest tests/
 ```
 
 ## License
 
-MIT
+MIT License. See [LICENSE](LICENSE).

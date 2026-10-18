@@ -6,11 +6,22 @@ digit of n is strictly less than p/2 (no carry in n+n in base p).
 For a modulus m, coprimality to m is equivalent to the condition for every
 prime power dividing m (for squarefree m, for every prime dividing m).
 """
+from __future__ import annotations
 
-from math import comb
+
 
 
 def base_digits(n, base):
+    """Base digits.
+    
+    Args:
+        n:
+        base:
+    
+    Returns:
+        The computed result
+    
+    """
     ds = []
     while n > 0:
         ds.append(n % base)
@@ -18,7 +29,7 @@ def base_digits(n, base):
     return ds or [0]
 
 
-def no_carry(n, p):
+def no_carry(n, p) -> bool:
     """True iff p does not divide C(2n,n)."""
     half = (p + 1) // 2  # digits must be < p/2, i.e. <= (p-1)//2
     limit = (p - 1) // 2 + 1  # first forbidden digit
@@ -29,6 +40,16 @@ def no_carry(n, p):
 
 
 def coprime_to_modulus(n, primes):
+    """Coprime to modulus.
+    
+    Args:
+        n:
+        primes:
+    
+    Returns:
+        The computed result
+    
+    """
     return all(no_carry(n, p) for p in primes)
 
 
